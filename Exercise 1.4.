@@ -1,0 +1,10 @@
+Exercise 1.4. Observe that our model of evaluation allows for combinations whose operators are
+compound expressions. Use this observation to describe the behavior of the following procedure:
+(define (a-plus-abs-b a b)
+ ((if (> b 0) + -) a b))
+ 
+ ;;This procedure will add a and b together, and if b has a negative value, turn it into a positive value, by instead of adding a + b
+ ;;turning the equation into a - (-b) (which is the same as a + b, technically).
+ ;;I don't get the observation I'm supposed to explicitly make, though. Of course we can use "compound expressions" such as (+ 1 2) instead
+ ;;of being limited to the us of 3 in its stead. We would be awfully inflexible and static if that were not a possibility.
+ ;;I feel like I'm overcomplicating this a bit, though.
