@@ -1,0 +1,21 @@
+Exercise 1.5. Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is
+using applicative-order evaluation or normal-order evaluation. He defines the following two
+procedures:
+(define (p) (p))
+(define (test x y)
+  (if (= x 0)
+  0
+  y))
+Then he evaluates the expression
+  (test 0 (p))
+What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What
+behavior will he observe with an interpreter that uses normal-order evaluation? Explain your answer.
+(Assume that the evaluation rule for the special form if is the same whether the interpreter is using
+normal or applicative order: The predicate expression is evaluated first, and the result determines
+whether to evaluate the consequent or the alternative expression.)
+
+
+;;Based upon how this exercise is and the nature of my interpreter, I can't confirm my suspicions. 
+;;But as it is, the interpreter begins to look for the value of (p), which he cannot find, as it is does not have a valid value to work with.
+;;This happens despite the interpreter not really needing it, as it only needs to print 0 (since x is indead 0). 
+;;This would happen only were the interpreter using the normal-order evaluation.
