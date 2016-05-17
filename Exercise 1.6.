@@ -21,3 +21,7 @@ What happens when Alyssa attempts to use this to compute square roots? Explain.
 ;find none of them to be 'true', leaving the value undefined and the program stuck in a loop.
 ;The true if-procedure will simply check the first condition, and if it is not true (or more simply, 'false'), will just begin to
 ;work with the 'else' option instead of getting stuck looking for a 'true' condition.
+
+
+;;Wait, shit, this doesn't seem right at all.
+;;FUCK.
