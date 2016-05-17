@@ -25,3 +25,7 @@ What happens when Alyssa attempts to use this to compute square roots? Explain.
 
 ;;Wait, shit, this doesn't seem right at all.
 ;;FUCK.
+
+;;;Okay, okay, I got this. Not quite right the first time but here we go:
+;;;New-if, as a procedure, will evaluate all its functions before doing anything. Which it can't do, because it's iterative.
+;;;If evaluates functions as it needs them, allowing for an iteration not immediately looping out of control before it got a chance to start.
