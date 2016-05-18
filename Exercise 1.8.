@@ -1,0 +1,37 @@
+Exercise 1.8. Newton’s method for cube roots is based on the fact that if y is an approximation to the
+cube root of x, then a better approximation is given by the value
+
+(x/y² + 2y) / 3
+
+Use this formula to implement a cube-root procedure analogous to the square-root procedure. (In
+section 1.3.4 we will see how to implement Newton’s method in general as an abstraction of these
+square-root and cube-root procedures.) 
+
+;Okay, this was relatively easy. Mostly because I could copypaste most of the code from the whole sqrt-thing. All I had to change
+;was the improve part.
+;(define (cbrt-iter y x)
+;    (if (cube-good? y x)
+;    y
+;    (cbrt-iter (impcube y x)
+;               x)))
+;The main iteration.
+;
+;(define (cube x)
+;    (* x x x))
+;Need that for the next check.
+;
+;(define (cube-good? y x)
+;    (< (abs (- (cube y) x)) (/ y 1000000)))
+;Basically the same as with the sqrt, this just is for accuracy.
+;
+;
+;(define (impcube y x)
+;   (/ (+ (/ x (square y)) (* 2 y)) 3))
+;How we're improving our guess. This is just the formula provided by SICP (or Newton, if you so will)
+;
+;define (cbrt x)
+;   (cbrt-iter 1.0 x))
+;To actually get started.
+;
+; (cbrt (cube 4))
+; 4.000000000076121
