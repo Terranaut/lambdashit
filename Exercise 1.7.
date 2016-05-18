@@ -1,0 +1,21 @@
+Exercise 1.7. 
+The good-enough? test used in computing square roots will not be very effective for
+finding the square roots of very small numbers. Also, in real computers, arithmetic operations are
+almost always performed with limited precision. This makes our test inadequate for very large
+numbers. Explain these statements, with examples showing how the test fails for small and large
+numbers. An alternative strategy for implementing good-enough? is to watch how guess changes
+from one iteration to the next and to stop when the change is a very small fraction of the guess. Design
+a square-root procedure that uses this kind of end test. Does this work better for small and large
+numbers? 
+
+;First of all, I'm not really seeing a problem with really large numbers. It accurately gives me the square root of those. Dunno.
+;For small numbers, especially below 1, this can be an issue where 0.001 can be quite a big disparity.
+;To fix this, we simply change the tolerance (the 0.001 in the 'good-enough?'-procedure) to a 100.000th of guess.
+;To do this we just remove the '0.001' and insert (/ guess 100000). Especially with really small numbers this greatly improves accuracy.
+;Ex: Using the old method, the square root of 0.0001 is 0.0323[...]. 0.0323 squared is 0.001 so clearly this very inaccurate.
+;Using the new method, the square root of 0.0001 is 0.0100007[...]. That squared is 0.00010001[...] which is far more accurate.
+;I'm not seeing any improvements for big numbers (nor any problems that need solved in the old method, like I said).
+
+;For the record, yes, I realize x/100000 is a smaller fraction than a flat 0.001 is, and that that is why it's more accurate and 
+;not because I made it more dynamic. I might aswell have set it to 0.000001 which has the same effect, really.
+;Maybe there's something I don't get, maybe the exercise is just that simple and I'm overcomplicating it. I dunno.
